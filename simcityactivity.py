@@ -60,17 +60,13 @@
 # NOT APPLY TO YOU.
 
 import os
-import signal
-import tempfile
-import logging
-import sys
+
 import time
 import subprocess
 import thread
 import fcntl
 
 from gettext import gettext as _
-from glob import glob
 
 from gi.repository import Gtk
 
@@ -89,9 +85,6 @@ try:
 except:
     WITH_PYGAME = False
 
-log = logging.getLogger('SimCity')
-log.setLevel(logging.DEBUG)
-logging.basicConfig()
 
 def QuoteTCL(s):
     return s.replace('"', '\\"')
@@ -111,12 +104,17 @@ class SimCityActivity(activity.Activity):
         #self.connect('focus-out-event', self._focus_out_cb)
 
         self._bundle_path = get_bundle_path()
+        
+        self.load_libs_dir()
 
         self.socket = Gtk.Socket()
         self.socket.connect("realize", self._start_all_cb)
         self.set_canvas(self.socket)
 
         self.show_all()
+
+    def load_libs_dir(self):    
+        os.environ['LD_LIBRARY_PATH'] = os.path.join(self._bundle_path, "libs")
 
     def _start_all_cb(self, widget):
         win = str(self.socket.get_id())
