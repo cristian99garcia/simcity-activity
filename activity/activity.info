@@ -1,0 +1,7 @@
+[Activity]
+name = SimCity
+activity_version = 4
+icon = activity-simcity
+service_name = org.laptop.SimCity
+class = simcityactivity.SimCityActivity
+show_launcher = yes

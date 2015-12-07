@@ -1,0 +1,40 @@
+/* XPM */
+static char *noname[] = {
+/* width height ncolors chars_per_pixel */
+"123 30 3 1",
+/* colors */
+"` c #B0B0B0 m #ffffff",
+"a c #00407F m #000000",
+"b c #0000BF m #000000",
+/* pixels */
+"```aaaaaaaaaaaaa````````````````````````````````````````````aaaaaaaaaaaa```````````````````````````````````````````````````",
+"``abbbbbbbbbbbbba``````````````````````````````````````````abbbbbbbbbbbba``````````````````````````````````````````````````",
+"`abbbbbbbbbbbbbbba```````````````````````````````````````aabbbbbbbbbbbbbba`````````````````````````````````````````````````",
+"abbbbbbbbbbbbbbbbba`````````````````````````````````````abbbbbbbbbbbbbbbbba````````````````````````````````````````````````",
+"abbbbbbbbbbbbbbbbba`````````````````````````````````````abbbbbbbbbbbbbbbbba````````````````````````````````````````````````",
+"abbbbaaaaaaabbbbbba`````````````````````````````````````abbbbbaaaaaaabbbbba````````````````````````````````````````````````",
+"abbbba`````abbbbbba`````````````````````````````````````abbbbba`````abbbbba````````````````````````````````````````````````",
+"abbbba`````abbbbbba``aaaaaa```aaaaaaa````````aaaaaaa````abbbbba`````abbbbba``aaaaaa``aaaaaaaaaaaaaaaaaaa``aaaaaa````aaaaaaa",
+"abbbba`````abbbbbba``abbbba```abbbbba````````abbbbba````abbbbba`````abbbbba``abbbba``abbbbbbbbbbbbbbbbba``abbbba````abbbbba",
+"abbbba`````aaaaaaaa``abbbba```abbbbbba``````abbbbbba````abbbbba`````aaaaaaa``abbbba``abbbbbbbbbbbbbbbbba```abbbba```abbbba`",
+"abbbba```````````````abbbba```abbbbbba``````abbbbbba````abbbbba``````````````abbbba``abbbbbbbbbbbbbbbbba```abbbba``abbbbba`",
+"abbbba```````````````abbbba```abbbbbba``````abbbbbba````abbbbba``````````````abbbba``aaaaaaabbbbbaaaaaaa```abbbbba`abbbba``",
+"abbbbaaaaaaaaa```````abbbba```abbbbbbba````abbbbbbba````abbbbba``````````````abbbba````````abbbbba``````````abbbba`abbbba``",
+"abbbbbbbbbbbbba``````abbbba```abbbbbbba````abbbbbbba````abbbbba``````````````abbbba````````abbbbba``````````abbbba`abbba```",
+"abbbbbbbbbbbbbbaa````abbbba```abbbbbbba````abbbbbbba````abbbbba``````````````abbbba````````abbbbba```````````abbbbabbbba```",
+"`abbbbbbbbbbbbbbba```abbbba```abbbbbbbba``abbbbbbbba````abbbbba``````````````abbbba````````abbbbba```````````abbbbabbbba```",
+"``abbbbbbbbbbbbbbba``abbbba```abbbbbbbba``abbbbbbbba````abbbbba``````````````abbbba````````abbbbba```````````abbbbbbbba````",
+"```aaaaaaaaabbbbbba``abbbba```abbbbbbbba``abbbbbbbba````abbbbba``````````````abbbba````````abbbbba````````````abbbbbbba````",
+"```````````abbbbbba``abbbba```abbbbbabbbaabbbabbbbba````abbbbba``````````````abbbba````````abbbbba````````````abbbbbba`````",
+"aaaaaaa````abbbbbba``abbbba```abbbbbabbbaabbbabbbbba````abbbbba`````aaaaaaa``abbbba````````abbbbba````````````abbbbbba`````",
+"abbbbba````abbbbbba``abbbba```abbbbbaabbbbbbaabbbbba````abbbbba`````abbbbba``abbbba````````abbbbba`````````````abbbba``````",
+"abbbbba````abbbbbba``abbbba```abbbbbaabbbbbbaabbbbba````abbbbba`````abbbbba``abbbba````````abbbbba`````````````abbbba``````",
+"abbbbba````abbbbbba``abbbba```abbbbbaabbbbbbaabbbbba````abbbbba`````abbbbba``abbbba````````abbbbba`````````````abbbba``````",
+"abbbbbaaaaaabbbbbba``abbbba```abbbbbaabbbbbbaabbbbba````abbbbbaaaaaaabbbbba``abbbba````````abbbbba`````````````abbbba``````",
+"abbbbbbbbbbbbbbbbba``abbbba```abbbbba`abbbba`abbbbba````abbbbbbbbbbbbbbbbba``abbbba````````abbbbba`````````````abbbba``````",
+"abbbbbbbbbbbbbbbba```abbbba```abbbbba`abbbba`abbbbba````abbbbbbbbbbbbbbbbba``abbbba````````abbbbba`````````````abbbba``````",
+"abbbbbbbbbbbbbbba````abbbba```abbbbba`abbbba`abbbbba`````abbbbbbbbbbbbbbbba``abbbba````````abbbbba`````````````abbbba``````",
+"`abbbbbbbbbbbbba`````abbbba```abbbbba`abbbba`abbbbba``````abbbbbbbbbbbbbba```abbbba````````abbbbba`````````````abbbba``````",
+"`abbbbbbbbbbbba``````abbbba```abbbbba``abba``abbbbba```````abbbbbbbbbbbba````abbbba````````abbbbba`````````````abbbba``````",
+"``aaaaaaaaaaaa```````aaaaaa```aaaaaaa``aaaa``aaaaaaa````````aaaaaaaaaaaa`````aaaaaa````````aaaaaaa`````````````aaaaaa``````"
+};
