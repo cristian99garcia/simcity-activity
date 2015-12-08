@@ -1,7 +1,7 @@
 [Activity]
-name = SimCity
-activity_version = 4
-icon = activity-simcity
-service_name = org.laptop.SimCity
-class = simcityactivity.SimCityActivity
+name = SugarCity
+activity_version = 1
+icon = activity-sugarcity
+service_name = org.laptop.SugarCity
+class = sugarcityactivity.SugarCityActivity
 show_launcher = yes

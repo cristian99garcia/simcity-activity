@@ -5,39 +5,39 @@
 # Per Child program.  Copyright (C) 1989 - 2007 Electronic Arts Inc.  If
 # you need assistance with this program, you may contact:
 #   http://wiki.laptop.org/go/SimCity  or email  simcity@laptop.org.
-# 
+#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or (at
 # your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful, but
 # WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 # General Public License for more details.  You should have received a
 # copy of the GNU General Public License along with this program.  If
 # not, see <http://www.gnu.org/licenses/>.
-# 
+#
 #             ADDITIONAL TERMS per GNU GPL Section 7
-# 
+#
 # No trademark or publicity rights are granted.  This license does NOT
 # give you any right, title or interest in the trademark SimCity or any
 # other Electronic Arts trademark.  You may not distribute any
 # modification of this program using the trademark SimCity or claim any
 # affliation or association with Electronic Arts Inc. or its employees.
-# 
+#
 # Any propagation or conveyance of this program must include this
 # copyright notice and these terms.
-# 
+#
 # If you convey this program (or any modifications of it) and assume
 # contractual liability for the program to recipients of it, you agree
 # to indemnify Electronic Arts for any liability that those contractual
 # assumptions impose on Electronic Arts.
-# 
+#
 # You may not misrepresent the origins of this program; modified
 # versions of the program must be marked as such and not identified as
 # the original program.
-# 
+#
 # This disclaimer supplements the one included in the General Public
 # License.  TO THE FULLEST EXTENT PERMISSIBLE UNDER APPLICABLE LAW, THIS
 # PROGRAM IS PROVIDED TO YOU "AS IS," WITH ALL FAULTS, WITHOUT WARRANTY
@@ -90,7 +90,7 @@ def QuoteTCL(s):
     return s.replace('"', '\\"')
 
 
-class SimCityActivity(activity.Activity):
+class SugarCityActivity(activity.Activity):
 
     def __init__(self, handle):
 
@@ -98,13 +98,13 @@ class SimCityActivity(activity.Activity):
 
         self._handle = handle
 
-        self.set_title(_('SimCity Activity'))
+        self.set_title(_('SugarCity Activity'))
         self.connect('destroy', self._destroy_cb)
         #self.connect('focus-in-event', self._focus_in_cb)
         #self.connect('focus-out-event', self._focus_out_cb)
 
         self._bundle_path = get_bundle_path()
-        
+
         self.load_libs_dir()
 
         self.socket = Gtk.Socket()
@@ -113,7 +113,7 @@ class SimCityActivity(activity.Activity):
 
         self.show_all()
 
-    def load_libs_dir(self):    
+    def load_libs_dir(self):
         os.environ['LD_LIBRARY_PATH'] = os.path.join(self._bundle_path, "libs")
 
     def _start_all_cb(self, widget):
@@ -122,7 +122,7 @@ class SimCityActivity(activity.Activity):
         if (win.endswith("L")):  # L of "Long"
             win = win[:-1]
 
-        command = os.path.join(self._bundle_path, 'SimCity')
+        command = os.path.join(self._bundle_path, 'SugarCity')
 
         args = [
             command,
