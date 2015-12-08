@@ -195,6 +195,7 @@ class SugarCityActivity(activity.Activity):
     def _destroy_cb(self, window):
         if not self.closed_from_game:
             self.send_process('SugarQuit\n')
+            subprocess.Popen(["killall", "sim"])
 
     def _focus_in_cb(self, window, event):
         self.send_process('SugarActivate\n')
