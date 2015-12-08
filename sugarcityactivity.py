@@ -97,12 +97,12 @@ class SugarCityActivity(activity.Activity):
         activity.Activity.__init__(self, handle)
 
         self._handle = handle
-        self.close_from_game = False
+        self.closed_from_game = False
 
         self.set_title(_('SugarCity Activity'))
         self.connect('destroy', self._destroy_cb)
-        self.connect('focus-in-event', self._focus_in_cb)
-        self.connect('focus-out-event', self._focus_out_cb)
+        #self.connect('focus-in-event', self._focus_in_cb)
+        #self.connect('focus-out-event', self._focus_out_cb)
 
         self._bundle_path = get_bundle_path()
 
@@ -150,7 +150,7 @@ class SugarCityActivity(activity.Activity):
         f = self._process.stdout
         fcntl.fcntl(f.fileno(), fcntl.F_SETFD, 0)
 
-        while True:
+        while not self.closed:
             line = 'XXX'
             try:
                 line = f.readline()
@@ -167,13 +167,11 @@ class SugarCityActivity(activity.Activity):
             if command == 'PlaySound':
                 self.play_sound(words[1])
 
-            elif command == 'QuitSimcity':
-                self.close_from_game = True
+            elif command == 'QuitSimCity':
+                self.closed_from_game = True
+                print("CLOSE THIS")
                 self.close()
                 break;
-
-            else:
-                pass
 
     def play_sound(self, name):
         fileName = os.path.join(self._bundle_path, 'res/sounds', name.lower() + '.wav')
@@ -192,13 +190,9 @@ class SugarCityActivity(activity.Activity):
         Activity.share(self)
         self.send_process('SugarShare\n')
 
-    def quit_process(self):
-        self.send_process('SugarQuit\n')
-        time.sleep(10)
-
     def _destroy_cb(self, window):
-        if not self.close_from_game:
-            self.quit_process()
+        if not self.closed_from_game:
+            self._process.kill()
 
     def _focus_in_cb(self, window, event):
         self.send_process('SugarActivate\n')
