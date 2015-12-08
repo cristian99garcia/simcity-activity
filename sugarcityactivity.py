@@ -170,7 +170,7 @@ class SugarCityActivity(activity.Activity):
             elif command == 'QuitSimCity':
                 self.closed_from_game = True
                 print("CLOSE THIS")
-                self.close()
+                self.close(True)
                 break;
 
     def play_sound(self, name):
