@@ -167,8 +167,8 @@ class SugarCityActivity(activity.Activity):
             if command == 'PlaySound':
                 self.play_sound(words[1])
 
-            elif command = 'QuitSimcity':
-                self.close_from_game == True
+            elif command == 'QuitSimcity':
+                self.close_from_game = True
                 self.close()
                 break;
 
