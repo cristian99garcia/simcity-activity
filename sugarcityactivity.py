@@ -62,6 +62,7 @@
 import os
 
 import time
+import signal
 import subprocess
 import thread
 import fcntl
@@ -106,7 +107,7 @@ class SugarCityActivity(activity.Activity):
 
         self._bundle_path = get_bundle_path()
 
-        self.load_libs_dir()
+        self.load_libs_dirs()
 
         self.socket = Gtk.Socket()
         self.socket.connect("realize", self._start_all_cb)
@@ -114,7 +115,8 @@ class SugarCityActivity(activity.Activity):
 
         self.show_all()
 
-    def load_libs_dir(self):
+    def load_libs_dirs(self):
+        os.environ["SINHOME"] = self._bundle_path
         os.environ['LD_LIBRARY_PATH'] = os.path.join(self._bundle_path, "libs")
 
     def _start_all_cb(self, widget):
@@ -122,8 +124,9 @@ class SugarCityActivity(activity.Activity):
 
         if (win.endswith("L")):  # L of "Long"
             win = win[:-1]
-
-        command = os.path.join(self._bundle_path, 'SugarCity')
+        
+        # Run game
+        command = os.path.join(self._bundle_path, "res/sim")  #'SugarCity')
 
         args = [
             command,
@@ -194,8 +197,8 @@ class SugarCityActivity(activity.Activity):
 
     def _destroy_cb(self, window):
         if not self.closed_from_game:
-            self.send_process('SugarQuit\n')
-            subprocess.Popen(["killall", "sim"])
+            os.kill(self._process.pid, signal.SIGUSR1)
+            #subprocess.Popen(["kill", "-9", str(self._process.pid)])
 
     def _focus_in_cb(self, window, event):
         self.send_process('SugarActivate\n')
