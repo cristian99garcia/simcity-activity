@@ -97,11 +97,12 @@ class SugarCityActivity(activity.Activity):
         activity.Activity.__init__(self, handle)
 
         self._handle = handle
+        self.close_from_game = False
 
         self.set_title(_('SugarCity Activity'))
         self.connect('destroy', self._destroy_cb)
-        #self.connect('focus-in-event', self._focus_in_cb)
-        #self.connect('focus-out-event', self._focus_out_cb)
+        self.connect('focus-in-event', self._focus_in_cb)
+        self.connect('focus-out-event', self._focus_out_cb)
 
         self._bundle_path = get_bundle_path()
 
@@ -166,6 +167,11 @@ class SugarCityActivity(activity.Activity):
             if command == 'PlaySound':
                 self.play_sound(words[1])
 
+            elif command = 'QuitSimcity':
+                self.close_from_game = True
+                self.close()
+                break;
+
             else:
                 pass
 
@@ -184,14 +190,15 @@ class SugarCityActivity(activity.Activity):
 
     def share(self):
         Activity.share(self)
-        self.send_process( 'SugarShare\n')
+        self.send_process('SugarShare\n')
 
     def quit_process(self):
         self.send_process('SugarQuit\n')
         time.sleep(10)
 
     def _destroy_cb(self, window):
-        self.quit_process()
+        if not self.close_from_game:
+            self.quit_process()
 
     def _focus_in_cb(self, window, event):
         self.send_process('SugarActivate\n')
