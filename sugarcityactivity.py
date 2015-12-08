@@ -150,7 +150,7 @@ class SugarCityActivity(activity.Activity):
         f = self._process.stdout
         fcntl.fcntl(f.fileno(), fcntl.F_SETFD, 0)
 
-        while not self.closed:
+        while True:
             line = 'XXX'
             try:
                 line = f.readline()
