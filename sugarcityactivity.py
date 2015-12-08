@@ -168,9 +168,11 @@ class SugarCityActivity(activity.Activity):
                 self.play_sound(words[1])
 
             elif command == 'QuitSimCity':
-                self.closed_from_game = True
-                print("CLOSE THIS")
-                self.close(True)
+                if not self.closed_from_game:
+                    self.closed_from_game = True
+                    print("CLOSE THIS")
+                    self.close(True)
+
                 break;
 
     def play_sound(self, name):
@@ -192,7 +194,7 @@ class SugarCityActivity(activity.Activity):
 
     def _destroy_cb(self, window):
         if not self.closed_from_game:
-            self._process.kill()
+            self.send_process('SugarQuit\n')
 
     def _focus_in_cb(self, window, event):
         self.send_process('SugarActivate\n')
